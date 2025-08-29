@@ -23,10 +23,12 @@ A comprehensive web application for the Embry-Riddle Aeronautical University COM
 ## File Structure
 
 ```
+docs/
 ├── index.html          # Main application file
 ├── style.css           # Stylesheet with ERAU branding
-├── app.js             # JavaScript functionality
-└── README.md          # This file
+├── app.js              # JavaScript functionality
+
+README.md               # Project documentation (in repository root)
 ```
 
 ## Usage
@@ -38,4 +40,3 @@ The application is designed for ERAU mentors and provides:
 - Copy-to-clipboard functionality for quick access to content
 - PDF generation for student intake forms
 - Responsive design for desktop and mobile use
-# erau-mentor-dashboard
