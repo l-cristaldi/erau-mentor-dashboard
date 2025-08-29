@@ -1,0 +1,1486 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ERAU COMPASS Mentoring Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <div class="erau-logo">
+          <h1>ERAU COMPASS Mentoring Dashboard</h1>
+          <div class="erau-tagline">Embry-Riddle Aeronautical University</div>
+        </div>
+      </header>
+
+      <nav class="sticky-nav">
+        <button class="nav-btn active" data-section="mentor-workflow">
+          Workflow
+        </button>
+        <button class="nav-btn" data-section="meeting-blueprints">
+          Meeting Blueprints
+        </button>
+        <button class="nav-btn" data-section="email-templates">
+          Email Templates
+        </button>
+        <button class="nav-btn" data-section="bepac-framework">
+          B-E-P-A-C
+        </button>
+        <button class="nav-btn" data-section="three-pillars">
+          Three Pillars
+        </button>
+        <button class="nav-btn" data-section="resource-links">Resources</button>
+      </nav>
+
+      <div id="notification" class="notification hidden">
+        <div class="notification__content">
+          <span class="notification__text"></span>
+          <button class="notification__close">&times;</button>
+        </div>
+      </div>
+
+      <main class="content">
+        <section id="mentor-workflow" class="section active">
+          <div class="card">
+            <div class="card__body">
+              <h2>COMPASS Mentor Workflow</h2>
+              <div class="workflow-steps">
+                <div class="workflow-step" style="position: relative">
+                  <div class="step-number">1</div>
+                  <div class="step-content">
+                    <span
+                      class="step-time"
+                      style="
+                        position: absolute;
+                        top: 16px;
+                        right: 16px;
+                        z-index: 2;
+                      "
+                    >
+                      Day 1-2
+                    </span>
+                    <h3>Initial Contact</h3>
+                    <p>
+                      Send Welcome Email Using Template; Schedule First Meeting
+                      Using Initial Meeting Blueprint.
+                    </p>
+                    <div class="step-actions">
+                      <button
+                        class="btn btn--sm btn--secondary"
+                        onclick="showSection('email-templates')"
+                      >
+                        Email Templates
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="workflow-step" style="position: relative">
+                  <div class="step-number">2</div>
+                  <div class="step-content">
+                    <span
+                      class="step-time"
+                      style="
+                        position: absolute;
+                        top: 16px;
+                        right: 16px;
+                        z-index: 2;
+                      "
+                    >
+                      Week 1
+                    </span>
+                    <h3>Intake Meeting</h3>
+                    <p>
+                      Follow Initial Meeting Blueprint; Complete Intake Form;
+                      Set Expectations.
+                    </p>
+                    <div class="step-actions">
+                      <button
+                        class="btn btn--sm btn--secondary"
+                        onclick="showSection('meeting-blueprints')"
+                      >
+                        Meeting Blueprints
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="workflow-step" style="position: relative">
+                  <div class="step-number">3</div>
+                  <div class="step-content">
+                    <span
+                      class="step-time"
+                      style="
+                        position: absolute;
+                        top: 16px;
+                        right: 16px;
+                        z-index: 2;
+                      "
+                    >
+                      Ongoing
+                    </span>
+                    <h3>Regular Sessions</h3>
+                    <p>
+                      Use Follow-Up Blueprint; Apply B-E-P-A-C; Track Progress;
+                      Document Notes.
+                    </p>
+                    <div class="step-actions">
+                      <button
+                        class="btn btn--sm btn--secondary"
+                        onclick="showSection('meeting-blueprints')"
+                      >
+                        Follow-Up Blueprint
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="workflow-step" style="position: relative">
+                  <div class="step-number">4</div>
+                  <div class="step-content">
+                    <span
+                      class="step-time"
+                      style="
+                        position: absolute;
+                        top: 16px;
+                        right: 16px;
+                        z-index: 2;
+                      "
+                    >
+                      Mid-Semester
+                    </span>
+                    <h3>Mid-Semester Check</h3>
+                    <p>
+                      Use Mid-Semester Blueprint; Assess Goals Comprehensively;
+                      Update Action Plans; Celebrate Achievements.
+                    </p>
+                    <div class="step-actions">
+                      <button
+                        class="btn btn--sm btn--secondary"
+                        onclick="showSection('meeting-blueprints')"
+                      >
+                        Mid-Check Blueprint
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="workflow-step" style="position: relative">
+                  <div class="step-number">5</div>
+                  <div class="step-content">
+                    <span
+                      class="step-time"
+                      style="
+                        position: absolute;
+                        top: 16px;
+                        right: 16px;
+                        z-index: 2;
+                      "
+                    >
+                      End of Semester
+                    </span>
+                    <h3>Transition & Closure</h3>
+                    <p>
+                      Follow Final Transition Blueprint; Celebrate Journey; Plan
+                      For Independence; Connect To Alumni Network.
+                    </p>
+                    <div class="step-actions">
+                      <button
+                        class="btn btn--sm btn--secondary"
+                        onclick="showSection('meeting-blueprints')"
+                      >
+                        Final Blueprint
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="meeting-blueprints" class="section">
+          <div class="card">
+            <div class="card__body">
+              <h2>Meeting Blueprints</h2>
+
+              <h3>The Five Phases of Mentoring: B-E-P-A-C</h3>
+              <ul class="bepac-overview">
+                <li>
+                  <strong>Belief:</strong> Cultivate steadfast belief through
+                  high expectations and encouragement
+                </li>
+                <li>
+                  <strong>Effort:</strong> Inspire extraordinary effort and
+                  commitment to excellence
+                </li>
+                <li>
+                  <strong>Progression:</strong> Facilitate consistent forward
+                  movement and momentum
+                </li>
+                <li>
+                  <strong>Accountability:</strong> Encourage responsibility and
+                  ownership of outcomes
+                </li>
+                <li>
+                  <strong>Confidence:</strong> Instill self-assurance through
+                  achievements and growth
+                </li>
+              </ul>
+
+              <h3>Initial Meeting (60 minutes)</h3>
+              <div class="checklist-section">
+                <h4>Pre-Meeting Preparation</h4>
+                <form class="checklist-form">
+                  <label
+                    ><input type="checkbox" /> Review student background
+                    information</label
+                  >
+                  <label
+                    ><input type="checkbox" /> Set up comfortable meeting
+                    space</label
+                  >
+                  <label
+                    ><input type="checkbox" /> Open COMPASS dashboard</label
+                  >
+                  <label
+                    ><input type="checkbox" /> Prepare intake form for
+                    completion</label
+                  >
+                  <label
+                    ><input type="checkbox" /> Review B-E-P-A-C framework</label
+                  >
+                </form>
+
+                <h4>Opening & Core Discussion</h4>
+                <form class="checklist-form">
+                  <label
+                    ><input type="checkbox" /> Welcome & rapport building</label
+                  >
+                  <label
+                    ><input type="checkbox" /> COMPASS program overview</label
+                  >
+                  <label
+                    ><input type="checkbox" /> Set expectations for
+                    mentorship</label
+                  >
+                  <label
+                    ><input type="checkbox" /> Complete intake form
+                    together</label
+                  >
+                  <label
+                    ><input type="checkbox" /> Academic goals assessment</label
+                  >
+                  <label
+                    ><input type="checkbox" /> Career interests
+                    exploration</label
+                  >
+                  <label
+                    ><input type="checkbox" /> Initial B-E-P-A-C
+                    evaluation</label
+                  >
+                </form>
+
+                <div class="question-samples">
+                  <h5>Sample Conversation Starters:</h5>
+                  <ul class="sample-questions">
+                    <li>
+                      "Welcome! I'm excited to be your mentor. Tell me, what
+                      drew you to ERAU?"
+                    </li>
+                    <li>"What are you most excited about this semester?"</li>
+                    <li>"What do you hope to get out of our mentorship?"</li>
+                  </ul>
+
+                  <h5>Essential Questions:</h5>
+                  <div class="question-category">
+                    <strong>Academic:</strong>
+                    <ul class="sample-questions">
+                      <li>"How are you feeling about your course load?"</li>
+                      <li>"What academic areas do you want to strengthen?"</li>
+                      <li>"What study strategies have worked for you?"</li>
+                    </ul>
+                  </div>
+                  <div class="question-category">
+                    <strong>Career & Goals:</strong>
+                    <ul class="sample-questions">
+                      <li>"What career path interests you most?"</li>
+                      <li>"Where do you see yourself in 5 years?"</li>
+                      <li>"What skills do you want to develop?"</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <h4>Closing</h4>
+                <form class="checklist-form">
+                  <label
+                    ><input type="checkbox" /> Summarize key insights</label
+                  >
+                  <label
+                    ><input type="checkbox" /> Set 1-2 initial action
+                    items</label
+                  >
+                  <label><input type="checkbox" /> Schedule next meeting</label>
+                  <label
+                    ><input type="checkbox" /> Generate and share PDF</label
+                  >
+                </form>
+              </div>
+
+              <h3>Regular Follow-up Meetings (45 minutes)</h3>
+              <div class="checklist-section">
+                <h4>Check-in & Review</h4>
+                <form class="checklist-form">
+                  <label
+                    ><input type="checkbox" /> Personal check-in and
+                    rapport</label
+                  >
+                  <label
+                    ><input type="checkbox" /> Review previous action
+                    items</label
+                  >
+                  <label
+                    ><input type="checkbox" /> Set today's meeting agenda</label
+                  >
+                  <label
+                    ><input type="checkbox" /> Academic updates and
+                    challenges</label
+                  >
+                  <label
+                    ><input type="checkbox" /> Apply B-E-P-A-C framework</label
+                  >
+                </form>
+
+                <div class="question-samples">
+                  <h5>Check-in Questions:</h5>
+                  <ul class="sample-questions">
+                    <li>"How has your week been going overall?"</li>
+                    <li>
+                      "Let's check in on those action items from last time..."
+                    </li>
+                    <li>"What's been on your mind since we last met?"</li>
+                  </ul>
+                </div>
+
+                <h4>Planning & Action</h4>
+                <form class="checklist-form">
+                  <label
+                    ><input type="checkbox" /> Set 2-3 new action items</label
+                  >
+                  <label
+                    ><input type="checkbox" /> Identify resources and support
+                    needed</label
+                  >
+                  <label><input type="checkbox" /> Schedule next meeting</label>
+                  <label
+                    ><input type="checkbox" /> End with encouragement</label
+                  >
+                </form>
+
+                <div class="question-samples">
+                  <h5>Closing Scripts:</h5>
+                  <ul class="sample-questions">
+                    <li>"So our action items for this week are..."</li>
+                    <li>
+                      "I'm confident you can tackle these challenges because..."
+                    </li>
+                    <li>
+                      "Remember, I'm here if you need support before our next
+                      meeting."
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <h3>Mid-Semester Check-in (60 minutes)</h3>
+              <form class="checklist-form">
+                <label
+                  ><input type="checkbox" /> Academic performance
+                  analysis</label
+                >
+                <label
+                  ><input type="checkbox" /> Goal progress evaluation</label
+                >
+                <label><input type="checkbox" /> Achievement celebration</label>
+                <label
+                  ><input type="checkbox" /> Challenge pattern
+                  identification</label
+                >
+                <label
+                  ><input type="checkbox" /> Strategy development for remainder
+                  of semester</label
+                >
+                <label
+                  ><input type="checkbox" /> Motivation reinforcement</label
+                >
+              </form>
+
+              <div class="question-samples">
+                <h5>Review Questions:</h5>
+                <ul class="sample-questions">
+                  <li>
+                    "How do you feel about your academic progress so far?"
+                  </li>
+                  <li>"Which goals have you made the most progress on?"</li>
+                  <li>"What achievements are you most proud of?"</li>
+                  <li>"What patterns do you notice in your challenges?"</li>
+                </ul>
+              </div>
+
+              <h3>Final Transition Meeting (60 minutes)</h3>
+              <form class="checklist-form">
+                <label
+                  ><input type="checkbox" /> Journey reflection and
+                  storytelling</label
+                >
+                <label><input type="checkbox" /> Achievement celebration</label>
+                <label><input type="checkbox" /> Growth acknowledgment</label>
+                <label
+                  ><input type="checkbox" /> Skills and confidence
+                  assessment</label
+                >
+                <label><input type="checkbox" /> Future goal setting</label>
+                <label
+                  ><input type="checkbox" /> Alumni network connection</label
+                >
+                <label
+                  ><input type="checkbox" /> Independence preparation</label
+                >
+              </form>
+
+              <div class="question-samples">
+                <h5>Reflection Prompts:</h5>
+                <ul class="sample-questions">
+                  <li>
+                    "When you think back to our first meeting, how have you
+                    grown?"
+                  </li>
+                  <li>"What are you most proud of accomplishing?"</li>
+                  <li>
+                    "What challenges did you overcome that surprised you?"
+                  </li>
+                  <li>
+                    "What skills have you developed through our work together?"
+                  </li>
+                </ul>
+
+                <h5>Future Planning Questions:</h5>
+                <ul class="sample-questions">
+                  <li>"What are your goals for the next semester/year?"</li>
+                  <li>"How will you maintain the momentum you've built?"</li>
+                  <li>"Who else can support you in your continued growth?"</li>
+                  <li>
+                    "What resources will be most valuable to you going forward?"
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="email-templates" class="section">
+          <div class="card">
+            <div class="card__body">
+              <h2>Email Templates</h2>
+              <p>
+                Click any template to copy to clipboard; customize placeholders
+                before sending.
+              </p>
+
+              <div class="template-grid">
+                <div class="email-template">
+                  <h3>Initial Contact Email</h3>
+                  <div class="template-meta">
+                    <span class="template-subject"
+                      >Subject: Welcome to ERAU COMPASS Mentorship - Let's Get
+                      Started!</span
+                    >
+                  </div>
+                  <div class="template-content">
+                    <p>Hi [Student Name]! Nice to meet you!</p>
+                    <p>
+                      Welcome to the ERAU COMPASS mentorship program! I'm
+                      [Mentor Name], and I'm excited to be your mentor. Our
+                      partnership is designed to help you maximize your academic
+                      potential and prepare for future success.
+                    </p>
+                    <p>
+                      COMPASS isn't your typical academic tutoring program or
+                      just another item on your to-do list. Instead, it's built
+                      on the B-E-P-A-C framework (Belief, Effort, Progression,
+                      Accountability, Confidence); the same success principles
+                      used by high achievers at top organizations worldwide. The
+                      skills we'll develop together will help you excel not just
+                      in the classroom, but in every aspect of life.
+                    </p>
+
+                    <p><strong>A Bit About Me</strong></p>
+                    <p>
+                      I'm [Mentor Name], [Mentor Background/Current Role]. I've
+                      personally navigated [Relevant Experience/Challenges], so
+                      I understand what it takes to thrive in these
+                      environments. When I'm not [Work/Study Activities], I
+                      enjoy [Mentor Hobbies/Interests].
+                    </p>
+                    <p>
+                      Feel free to connect with me on LinkedIn: [LinkedIn URL]
+                    </p>
+
+                    <p><strong>Our Initial Meeting</strong></p>
+                    <p>
+                      I'd like to schedule our first onboarding meeting within
+                      the next couple of weeks. During our conversation, we'll
+                      explore key areas to understand how I can best support
+                      you:
+                    </p>
+                    <p><strong>Topics We'll Discuss:</strong></p>
+                    <ul>
+                      <li>
+                        Your current academic standing and any areas where
+                        you're struggling or thriving
+                      </li>
+                      <li>
+                        Your short and long-term goals (both academic and career
+                        aspirations)
+                      </li>
+                      <li>
+                        Specific subjects or skills you'd like to focus on or
+                        dive deeper into
+                      </li>
+                      <li>Your learning style and study habits</li>
+                      <li>Time management strategies and current challenges</li>
+                      <li>
+                        What do you hope to gain from our mentorship
+                        relationship
+                      </li>
+                      <li>
+                        How we'll structure our ongoing meetings and
+                        communication
+                      </li>
+                    </ul>
+                    <p><strong>How to Prepare:</strong></p>
+                    <p>
+                      Just think about these topics beforehand. There's no need
+                      to write anything out! Come ready to have an open
+                      conversation about where you are academically and where
+                      you want to go.
+                    </p>
+
+                    <p><strong>Next Steps:</strong></p>
+                    <p>
+                      Please let me know of a time slot that works for you [Date
+                      Range], and I'll confirm our meeting! You can also use my
+                      scheduling link: [Scheduling URL]
+                    </p>
+                    <p>
+                      We can meet in-person, virtually, or whatever format works
+                      best for you. [Optional: Location/Availability Details]
+                    </p>
+
+                    <p>Looking forward to getting started!</p>
+
+                    <p>[Optional Comments/Program Notes]</p>
+
+                    <p>
+                      Sincerely,<br />
+                      [Mentor Name]<br />
+                      [Title]<br />
+                      [Email]<br />
+                      [Phone]
+                    </p>
+                  </div>
+                  <button
+                    class="btn btn--secondary copy-template"
+                    data-template="initial-contact"
+                  >
+                    Copy Template
+                  </button>
+                </div>
+
+                <div class="email-template">
+                  <h3>Meeting Confirmation</h3>
+                  <div class="template-meta">
+                    <span class="template-subject"
+                      >Subject: COMPASS Mentorship Meeting Confirmation -
+                      [Date]</span
+                    >
+                  </div>
+                  <div class="template-content">
+                    <p>Hi [Student Name],</p>
+                    <p>This confirms our mentorship meeting scheduled for:</p>
+                    <p>
+                      <strong>Date:</strong> [Date]<br />
+                      <strong>Time:</strong> [Time]<br />
+                      <strong>Location:</strong> [Location/Zoom Link]
+                    </p>
+                    <p>Please bring:</p>
+                    <ul>
+                      <li>
+                        Your current academic standing and any areas where
+                        you're struggling or thriving
+                      </li>
+                      <li>
+                        Your short and long-term goals (both academic and career
+                        aspirations)
+                      </li>
+                      <li>
+                        Specific subjects or skills you'd like to focus on or
+                        dive deeper into
+                      </li>
+                      <li>Your learning style and study habits</li>
+                      <li>Time management strategies and current challenges</li>
+                      <li>
+                        What do you hope to gain from our mentorship
+                        relationship
+                      </li>
+                    </ul>
+                    <p>
+                      If you need to reschedule, please let me know at least 24
+                      hours in advance.
+                    </p>
+                    <p>Looking forward to our conversation!</p>
+                    <p>Best regards,<br />[Your Name]</p>
+                  </div>
+                  <button
+                    class="btn btn--secondary copy-template"
+                    data-template="meeting-confirmation"
+                  >
+                    Copy Template
+                  </button>
+                </div>
+
+                <div class="email-template">
+                  <h3>Follow-up Email</h3>
+                  <div class="template-meta">
+                    <span class="template-subject"
+                      >Subject: Great meeting you today - Action Items & Next
+                      Steps</span
+                    >
+                  </div>
+                  <div class="template-content">
+                    <p>Hi [Student Name],</p>
+                    <p>
+                      It was great meeting with you today! I enjoyed learning
+                      more about your goals and interests.
+                    </p>
+                    <p><strong>Summary of what we discussed:</strong></p>
+                    <ul>
+                      <li>[Key Point 1]</li>
+                      <li>[Key Point 2]</li>
+                      <li>[Key Point 3]</li>
+                    </ul>
+                    <p><strong>Your action items:</strong></p>
+                    <ul>
+                      <li>[Action Item 1] - Due: [Date]</li>
+                      <li>[Action Item 2] - Due: [Date]</li>
+                    </ul>
+                    <p><strong>Resources mentioned:</strong></p>
+                    <ul>
+                      <li>[Resource 1 with link]</li>
+                      <li>[Resource 2 with link]</li>
+                    </ul>
+                    <p>
+                      Our next meeting is scheduled for [Next Meeting Date].
+                      Please reach out if you have any questions before then!
+                    </p>
+                    <p>Keep up the great work!</p>
+                    <p>Best regards,<br />[Your Name]</p>
+                  </div>
+                  <button
+                    class="btn btn--secondary copy-template"
+                    data-template="follow-up"
+                  >
+                    Copy Template
+                  </button>
+                </div>
+
+                <div class="email-template">
+                  <h3>Mid-Semester Check-in Email</h3>
+                  <div class="template-meta">
+                    <span class="template-subject"
+                      >Subject: Mid-Semester COMPASS Check-in - Let's Celebrate
+                      Your Progress!</span
+                    >
+                  </div>
+                  <div class="template-content">
+                    <p>Hi [Student Name],</p>
+                    <p>
+                      Can you believe we're already halfway through the
+                      semester? Time for our comprehensive mid-semester
+                      check-in!
+                    </p>
+                    <p>I'd like to schedule a special 60-minute session to:</p>
+                    <ul>
+                      <li>Celebrate your achievements so far</li>
+                      <li>Assess progress on your goals</li>
+                      <li>Address any challenges strategically</li>
+                      <li>Plan for a strong finish to the semester</li>
+                    </ul>
+                    <p>Please come prepared to discuss:</p>
+                    <ul>
+                      <li>
+                        Your academic performance and how you feel about it
+                      </li>
+                      <li>Which goals you've made progress on</li>
+                      <li>Any new challenges or opportunities</li>
+                      <li>
+                        What support you need for the rest of the semester
+                      </li>
+                    </ul>
+                    <p>
+                      Are you available [Date Options] for this important
+                      check-in?
+                    </p>
+                    <p>Looking forward to celebrating your growth!</p>
+                    <p>Best regards,<br />[Your Name]</p>
+                  </div>
+                  <button
+                    class="btn btn--secondary copy-template"
+                    data-template="mid-semester-checkin"
+                  >
+                    Copy Template
+                  </button>
+                </div>
+
+                <div class="email-template">
+                  <h3>Final Transition Email</h3>
+                  <div class="template-meta">
+                    <span class="template-subject"
+                      >Subject: Our Final COMPASS Session - Celebrating Your
+                      Journey!</span
+                    >
+                  </div>
+                  <div class="template-content">
+                    <p>Hi [Student Name],</p>
+                    <p>
+                      It's hard to believe, but it's time for our final COMPASS
+                      mentorship session. What an incredible journey it's been!
+                    </p>
+                    <p>For our final 60-minute meeting, we'll focus on:</p>
+                    <ul>
+                      <li>Reflecting on how much you've grown</li>
+                      <li>Celebrating all your achievements</li>
+                      <li>Planning for your continued success</li>
+                      <li>
+                        Connecting you with ongoing resources and networks
+                      </li>
+                    </ul>
+                    <p>Please come ready to share:</p>
+                    <ul>
+                      <li>What you're most proud of accomplishing</li>
+                      <li>How you've grown since our first meeting</li>
+                      <li>Your goals for the next phase of your journey</li>
+                      <li>Any questions about transitioning to independence</li>
+                    </ul>
+                    <p>
+                      Are you available [Date Options] for this celebration and
+                      transition session?
+                    </p>
+                    <p>Best regards,<br />[Your Name]</p>
+                  </div>
+                  <button
+                    class="btn btn--secondary copy-template"
+                    data-template="final-transition"
+                  >
+                    Copy Template
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="bepac-framework" class="section">
+          <div class="card">
+            <div class="card__body">
+              <h2>The Five Phases of Mentoring: B-E-P-A-C</h2>
+
+              <p>
+                The underlying principles forming the basis of these five phases
+                were developed over decades of teaching and mentoring students
+                in a wide range of high school and college settings. This
+                approach has helped countless students unlock their academic
+                potential and pave the way for a successful future.
+              </p>
+
+              <ul class="bepac-overview">
+                <li>
+                  <strong>Belief:</strong> Cultivate steadfast belief through
+                  high expectations and encouragement. Apply the
+                  <em>Pygmalion Effect</em> - high expectations create
+                  self-fulfilling prophecies.
+                </li>
+                <li>
+                  <strong>Effort:</strong> Inspire extraordinary effort and
+                  commitment to excellence. Emphasize that there are no
+                  shortcuts to success - "old-fashioned hard work" is central to
+                  achievement.
+                </li>
+                <li>
+                  <strong>Progression:</strong> Facilitate consistent forward
+                  movement and momentum building. Help students see everything
+                  as progression: every assignment, course, semester.
+                </li>
+                <li>
+                  <strong>Accountability:</strong> Encourage responsibility and
+                  ownership of outcomes. Help mentees examine setbacks
+                  objectively and learn from mistakes to avoid patterns of poor
+                  performance.
+                </li>
+                <li>
+                  <strong>Confidence:</strong> Instill self-assurance through
+                  achievements and growth recognition. Build confidence through
+                  utilizing natural talents AND overcoming challenges.
+                </li>
+              </ul>
+
+              <h3>Key Principles for Each Phase</h3>
+
+              <div class="question-samples">
+                <h5>Belief - Cultivating High Expectations:</h5>
+                <ul class="sample-questions">
+                  <li>"If you raise the bar, they will find a way over"</li>
+                  <li>
+                    Instill unshakeable belief that mentees can achieve
+                    ambitious objectives
+                  </li>
+                  <li>
+                    Create self-fulfilling prophecies through positive
+                    expectations
+                  </li>
+                  <li>
+                    Make certain mentees truly believe their aspirations can
+                    become reality
+                  </li>
+                </ul>
+
+                <h5>Effort - Inspiring Hard Work:</h5>
+                <ul class="sample-questions">
+                  <li>
+                    "Belief is the catalyst, effort brings vision into focus"
+                  </li>
+                  <li>
+                    Promote daily routines that prioritize effort above the norm
+                  </li>
+                  <li>
+                    There is no substitute for doing the work required, day
+                    after day
+                  </li>
+                  <li>
+                    Muhammad Ali: "Suffer now and live the rest of your life as
+                    a champion"
+                  </li>
+                </ul>
+
+                <h5>Progression - Building Momentum:</h5>
+                <ul class="sample-questions">
+                  <li>
+                    "Momentum is the fuel that leads to sustained success"
+                  </li>
+                  <li>
+                    Stack one success on top of another in daily pursuit of
+                    excellence
+                  </li>
+                  <li>
+                    Encourage effective time management and strategic planning
+                  </li>
+                  <li>Success breeds success - winning becomes a habit</li>
+                </ul>
+
+                <h5>Accountability - Learning from Setbacks:</h5>
+                <ul class="sample-questions">
+                  <li>
+                    Focus on quick course correction followed by winning streaks
+                  </li>
+                  <li>
+                    Setbacks are inevitable - examine why things went wrong
+                  </li>
+                  <li>
+                    Michael Jordan: "I've failed over and over again, and that
+                    is why I succeed"
+                  </li>
+                  <li>
+                    Promote resilient attitudes when stumbling blocks are
+                    encountered
+                  </li>
+                </ul>
+
+                <h5>Confidence - Building Self-Assurance:</h5>
+                <ul class="sample-questions">
+                  <li>"Confidence germinates from the seeds of belief"</li>
+                  <li>
+                    Craft customized strategies to unlock individual potential
+                  </li>
+                  <li>
+                    Confidence comes from thriving at strengths AND overcoming
+                    weaknesses
+                  </li>
+                  <li>
+                    Prepare students to enter careers with confidence and
+                    leadership capability
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="three-pillars" class="section">
+          <div class="card">
+            <div class="card__body">
+              <h2>The Three Pillars of Effective Mentoring</h2>
+
+              <p>
+                The foundation of successful mentoring relationships built on
+                trust, growth, and empowerment. These pillars support the
+                B-E-P-A-C framework and guide every interaction with mentees.
+              </p>
+
+              <h3>1. Build Academic Confidence</h3>
+              <ul class="bepac-overview">
+                <li>
+                  <strong>Foundation:</strong> Help mentees concentrate on what
+                  they <strong>can</strong> do instead of what they
+                  <strong>can't</strong> do
+                </li>
+                <li>
+                  <strong>Approach:</strong> Confidence comes from thriving at
+                  strengths AND performing beyond expectations in challenging
+                  areas
+                </li>
+                <li>
+                  <strong>Goal:</strong> Build unshakeable belief that mentees
+                  can and will succeed
+                </li>
+              </ul>
+
+              <div class="question-samples">
+                <h5>Questions to Ask Mentees:</h5>
+                <ul class="sample-questions">
+                  <li>
+                    When it comes to school, which courses/subjects do you tend
+                    to naturally excel in?
+                  </li>
+                  <li>
+                    Conversely, which courses/subjects do you tend to struggle
+                    with?
+                  </li>
+                  <li>
+                    Thinking about your current schedule, which classes fall
+                    into your "strength" category vs. "challenge" category?
+                  </li>
+                  <li>
+                    What is your specific plan to overcome the anticipated
+                    challenges in difficult subjects?
+                  </li>
+                  <li>
+                    How do you typically respond when you don't perform as well
+                    as expected?
+                  </li>
+                  <li>
+                    What does academic success look like to you this semester?
+                  </li>
+                </ul>
+
+                <h5>Mentor Reflection Questions:</h5>
+                <ul class="sample-questions">
+                  <li>
+                    How do I help mentees identify their natural talents and
+                    strengths?
+                  </li>
+                  <li>
+                    What strategies do I use to help them overcome challenging
+                    subjects?
+                  </li>
+                  <li>
+                    Am I encouraging high expectations while providing adequate
+                    support?
+                  </li>
+                </ul>
+              </div>
+
+              <h3>2. Achieve Maximum Potential</h3>
+              <ul class="bepac-overview">
+                <li>
+                  <strong>Foundation:</strong> Excellence is a habit formed
+                  through repetition and strategic time management
+                </li>
+                <li>
+                  <strong>Approach:</strong> Make sound academic habits as
+                  natural as daily routines
+                </li>
+                <li>
+                  <strong>Goal:</strong> Help mentees become accustomed to
+                  winning and doing things that make winning possible
+                </li>
+              </ul>
+
+              <div class="question-samples">
+                <h5>Questions to Ask Mentees:</h5>
+                <ul class="sample-questions">
+                  <li>
+                    What is your favorite time of day? When are you most
+                    productive?
+                  </li>
+                  <li>
+                    Are you a morning person or a night person, and how does
+                    this impact your daily routine?
+                  </li>
+                  <li>
+                    What blocks of time do you need to account for on a daily
+                    basis?
+                  </li>
+                  <li>
+                    What is the best way to arrange these times so that you
+                    maximize your productivity?
+                  </li>
+                  <li>
+                    What are the primary "time wasters" in your life, and what
+                    are you going to do to eliminate them?
+                  </li>
+                  <li>
+                    What good habits do you want to make a part of your everyday
+                    routine?
+                  </li>
+                  <li>How do you currently handle procrastination?</li>
+                </ul>
+
+                <h5>Mentor Reflection Questions:</h5>
+                <ul class="sample-questions">
+                  <li>
+                    How do I help mentees identify optimal study and work times?
+                  </li>
+                  <li>
+                    What strategies do I use to help them eliminate
+                    procrastination and time wasters?
+                  </li>
+                  <li>
+                    Am I helping them understand that momentum leads to
+                    sustained success?
+                  </li>
+                </ul>
+              </div>
+
+              <h3>3. Prepare for Future Success</h3>
+              <ul class="bepac-overview">
+                <li>
+                  <strong>Foundation:</strong> Strategic planning and long-term
+                  vision over immediate gratification
+                </li>
+                <li>
+                  <strong>Approach:</strong> Everything is a progression - every
+                  assignment, course, semester
+                </li>
+                <li>
+                  <strong>Goal:</strong> Help mentees see how current actions
+                  connect to future opportunities
+                </li>
+              </ul>
+
+              <div class="question-samples">
+                <h5>Questions to Ask Mentees:</h5>
+                <ul class="sample-questions">
+                  <li>
+                    What do you see yourself doing in five years? How about in
+                    ten years?
+                  </li>
+                  <li>
+                    What must you accomplish between now and then in order to
+                    make this vision a reality?
+                  </li>
+                  <li>
+                    What is the biggest obstacle to achieving your vision, and
+                    how do you plan to overcome this obstacle?
+                  </li>
+                  <li>
+                    What are you doing right now at ERAU to actively work
+                    towards achieving this vision?
+                  </li>
+                  <li>
+                    How do you balance immediate desires with long-term goals?
+                  </li>
+                  <li>
+                    What opportunities are you currently pursuing or
+                    considering?
+                  </li>
+                  <li>
+                    What would you regret not pursuing while you're at ERAU?
+                  </li>
+                </ul>
+
+                <h5>Mentor Reflection Questions:</h5>
+                <ul class="sample-questions">
+                  <li>
+                    How do I help mentees develop clear 5-year and 10-year
+                    visions?
+                  </li>
+                  <li>
+                    What strategies do I use to help them connect current
+                    academic work to future goals?
+                  </li>
+                  <li>
+                    Am I helping them understand the value of delayed
+                    gratification?
+                  </li>
+                </ul>
+              </div>
+
+              <div class="question-samples">
+                <h5>Reflection Synthesis Questions:</h5>
+                <ul class="sample-questions">
+                  <li>
+                    What are you going to do in order to build academic
+                    confidence?
+                  </li>
+                  <li>
+                    What are you going to do in order to achieve maximum
+                    potential?
+                  </li>
+                  <li>
+                    What are you going to do in order to prepare for future
+                    success?
+                  </li>
+                </ul>
+
+                <h5>Inspirational Reminders:</h5>
+                <ul class="sample-questions">
+                  <li>
+                    "If you lower your expectations, they will always be met"
+                  </li>
+                  <li>"Procrastination and potential are mortal enemies"</li>
+                  <li>
+                    "If you don't know where you're going, how you gonna get
+                    there?"
+                  </li>
+                  <li>
+                    Steve Prefontaine: "To give anything less than your best is
+                    to sacrifice the gift"
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="resource-links" class="section">
+          <div class="card">
+            <div class="card__body">
+              <h2>ERAU Resources & Quick Links</h2>
+              <p>
+                Essential ERAU resources for mentors and students, emphasizing
+                Worldwide access where available.
+              </p>
+
+              <div class="resources-grid">
+                <div class="resource-card">
+                  <h3>Mentorship Programs</h3>
+                  <div class="resource-item">
+                    <h4>
+                      COMPASS - Center of Mentorship Programs and Student
+                      Success
+                    </h4>
+                    <p>
+                      Connects students with Faculty, Peer, or Alumni mentors
+                      via virtual meetings based on the B-E-P-A-C framework.
+                    </p>
+                    <div class="resource-links">
+                      <a
+                        href="mailto:COMPASS@erau.edu"
+                        class="copyable"
+                        data-copy="COMPASS@erau.edu"
+                        >COMPASS@erau.edu</a
+                      >
+                      <a
+                        href="https://worldwide.erau.edu/administration/compass"
+                        target="_blank"
+                        rel="noopener"
+                        >Program Page</a
+                      >
+                    </div>
+                  </div>
+
+                  <div class="resource-item">
+                    <h4>Alumni Mentor Program</h4>
+                    <p>
+                      Alumni mentors provide guidance on careers, graduate
+                      school, relocation, and internships.
+                    </p>
+                    <div class="resource-links">
+                      <a
+                        href="https://alumni.erau.edu/invest-in-future-eagles/mentor-program"
+                        target="_blank"
+                        rel="noopener"
+                        >Program Page</a
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <div class="resource-card">
+                  <h3>Academic Support</h3>
+                  <div class="resource-item">
+                    <h4>Tutoring Services</h4>
+                    <ul class="simple-links">
+                      <li>
+                        <a
+                          href="https://daytonabeach.erau.edu/college-arts-sciences/tutoring"
+                          target="_blank"
+                          rel="noopener"
+                          >Academic Advancement Center (AAC)</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          href="https://worldwide.erau.edu/colleges/arts-sciences/vector"
+                          target="_blank"
+                          rel="noopener"
+                          >Virtual Communication Lab (VCL)</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          href="https://daytonabeach.erau.edu/campus-life/student-union/student-support"
+                          target="_blank"
+                          rel="noopener"
+                          >Center for Communication & Digital Media</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          href="https://news.erau.edu/headlines/embry-riddle-offers-virtual-tutoring-for-students"
+                          target="_blank"
+                          rel="noopener"
+                          >Virtual Tutoring - Canvas/ERNIE</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="resource-item">
+                    <h4>Library and Research</h4>
+                    <ul class="simple-links">
+                      <li>
+                        <a
+                          href="https://huntlibrary.erau.edu/"
+                          target="_blank"
+                          rel="noopener"
+                          >Hunt Library</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          href="https://erau.edu/research/research-in-classroom/undergraduate-research-scholars-program"
+                          target="_blank"
+                          rel="noopener"
+                          >Undergraduate Research Scholars Program</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="resource-card">
+                  <h3>Career & Professional Development</h3>
+                  <div class="resource-item">
+                    <h4>Career Services</h4>
+                    <ul class="simple-links">
+                      <li>
+                        <a
+                          href="https://worldwide.erau.edu/career-services"
+                          target="_blank"
+                          rel="noopener"
+                          >Center for Career & Professional Development</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          href="https://worldwide.erau.edu/career-services"
+                          target="_blank"
+                          rel="noopener"
+                          >CareerFitter (Worldwide)</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          href="https://daytonabeach.erau.edu/campus-life/student-union/student-support"
+                          target="_blank"
+                          rel="noopener"
+                          >Student Employment Office</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          href="https://erau.edu/hub-spoke/stories/resources-available-to-embry-riddle-students"
+                          target="_blank"
+                          rel="noopener"
+                          >Career Expos & Industry Networking</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="resource-card">
+                  <h3>Student Support</h3>
+                  <div class="resource-item">
+                    <h4>Mental Health & Wellness</h4>
+                    <ul class="simple-links">
+                      <li>
+                        <a
+                          href="https://prescott.erau.edu/about/counseling"
+                          target="_blank"
+                          rel="noopener"
+                          >Counseling Centers (Daytona Beach & Prescott)</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          href="https://daytonabeach.erau.edu/about/counseling"
+                          target="_blank"
+                          rel="noopener"
+                          >TELUS Health Student Support (24/7)</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="resource-item">
+                    <h4>Additional Support</h4>
+                    <ul class="simple-links">
+                      <li>
+                        <a
+                          href="https://worldwide.erau.edu/online-learning"
+                          target="_blank"
+                          rel="noopener"
+                          >eUnion (virtual community)</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          href="https://erau-swe-mentorship.webnode.page/"
+                          target="_blank"
+                          rel="noopener"
+                          >SWE Mentoring Program</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <button id="open-intake-sidebar" class="open-intake-sidebar">
+      ☰ Intake Form
+    </button>
+
+    <div id="intake-sidebar" class="intake-sidebar hidden">
+      <div class="intake-sidebar__header">
+        <h2>COMPASS Intake Form</h2>
+        <button
+          id="close-intake-sidebar"
+          class="close-sidebar"
+          aria-label="Close Intake Form"
+        >
+          Minimize
+        </button>
+      </div>
+      <div class="intake-sidebar__body">
+        <p>Complete this form during the initial meeting with your mentee.</p>
+        <form id="intake-form-data" class="intake-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="intake-name">Name</label>
+              <input type="text" class="form-control" id="intake-name" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="intake-erau-email"
+                >ERAU Email</label
+              >
+              <input type="email" class="form-control" id="intake-erau-email" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="intake-alternate-email"
+                >Alternate Email</label
+              >
+              <input
+                type="email"
+                class="form-control"
+                id="intake-alternate-email"
+              />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="intake-major">Major</label>
+              <input type="text" class="form-control" id="intake-major" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="intake-minor"
+                >Minor (if applicable)</label
+              >
+              <input type="text" class="form-control" id="intake-minor" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="intake-classification"
+                >Classification</label
+              >
+              <select class="form-control" id="intake-classification">
+                <option value="">Select Classification</option>
+                <option value="Freshman">Freshman</option>
+                <option value="Sophomore">Sophomore</option>
+                <option value="Junior">Junior</option>
+                <option value="Senior">Senior</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="intake-graduation"
+                >Estimated Graduation</label
+              >
+              <input type="month" class="form-control" id="intake-graduation" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="intake-explanation"
+              >Explanation</label
+            >
+            <textarea
+              class="form-control"
+              id="intake-explanation"
+              rows="6"
+              placeholder="Please explain why you are interested in receiving mentorship through COMPASS, including what you hope to gain from being mentored, specific topics that you would like to cover, and any other unique circumstances that we should consider when evaluating your application."
+            ></textarea>
+          </div>
+          <div class="form-actions">
+            <button
+              type="button"
+              class="btn btn--primary"
+              id="generate-pdf-btn"
+            >
+              Generate PDF
+            </button>
+            <button
+              type="button"
+              class="btn btn--secondary"
+              id="clear-form-btn"
+            >
+              Clear Form
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
