@@ -194,30 +194,52 @@ function initializeEmailTemplates() {
 
 function getTemplateContent(templateType) {
   const templates = {
-    "initial-contact": `Subject: Welcome to ERAU COMPASS Mentorship - Let's Get Started!
+    "initial-contact": `Hi [Student Name]! Nice to meet you!
 
-Hi [Student Name]!
+Welcome to the ERAU COMPASS mentorship program! I'm [Mentor Name], and I'm excited to be your mentor. Our partnership is designed to help you maximize your academic potential and prepare for future success.
 
-Welcome to the ERAU COMPASS mentorship program! I'm [Your Name], and I'm excited to be your mentor this semester.
+COMPASS isn't your typical academic tutoring program or just another item on your to-do list. Instead, it's built on the B-E-P-A-C framework (Belief, Effort, Progression, Accountability, Confidence); the same success principles used by high achievers at top organizations worldwide. The skills we'll develop together will help you excel not just in the classroom, but in every aspect of life.
 
-COMPASS is designed to help you navigate your academic journey and prepare for your career in aerospace. Together, we'll work on:
-• Academic success strategies
-• Career planning and networking
-• Personal and professional development
-• Making the most of your ERAU experience
+A Bit About Me
 
-I'd love to schedule our first meeting to get to know you better and understand your goals. Are you available [Date Options] for a 60-minute conversation? We'll follow our Initial Meeting Blueprint to make the most of our time together.
+I'm [Mentor Name], [Mentor Background/Current Role]. I've personally navigated [Relevant Experience/Challenges], so I understand what it takes to thrive in these environments. When I'm not [Work/Study Activities], I enjoy [Mentor Hobbies/Interests].
 
-Looking forward to working with you!
+Feel free to connect with me on LinkedIn: [LinkedIn URL]
 
-Best regards,
-[Your Name]
-[Your Title]
-[Contact Information]`,
+Our Initial Meeting
 
-    "meeting-confirmation": `Subject: COMPASS Mentorship Meeting Confirmation - [Date]
+I'd like to schedule our first onboarding meeting within the next couple of weeks. During our conversation, we'll explore key areas to understand how I can best support you:
 
-Hi [Student Name],
+Topics We'll Discuss:
+
+Your current academic standing and any areas where you're struggling or thriving
+Your short and long-term goals (both academic and career aspirations)
+Specific subjects or skills you'd like to focus on or dive deeper into
+Your learning style and study habits
+Time management strategies and current challenges
+What do you hope to gain from our mentorship relationship
+How we'll structure our ongoing meetings and communication
+How to Prepare:
+
+Just think about these topics beforehand. There's no need to write anything out! Come ready to have an open conversation about where you are academically and where you want to go.
+
+Next Steps:
+
+Please let me know of a time slot that works for you [Date Range], and I'll confirm our meeting! You can also use my scheduling link: [Scheduling URL]
+
+We can meet in-person, virtually, or whatever format works best for you. [Optional: Location/Availability Details]
+
+Looking forward to getting started!
+
+[Optional Comments/Program Notes]
+
+Sincerely,
+[Mentor Name]
+[Title]
+[Email]
+[Phone]`,
+
+    "meeting-confirmation": `Hi [Student Name],
 
 This confirms our mentorship meeting scheduled for:
 
@@ -226,12 +248,13 @@ Time: [Time]
 Location: [Location/Zoom Link]
 
 Please bring:
-• Your current class schedule
-• Any questions or concerns you'd like to discuss
-• Your career interests and goals
 
-For our first meeting, we'll be following the Initial Meeting Blueprint, which includes completing your intake form together and setting up your personalized mentorship plan.
-
+Your current academic standing and any areas where you're struggling or thriving
+Your short and long-term goals (both academic and career aspirations)
+Specific subjects or skills you'd like to focus on or dive deeper into
+Your learning style and study habits
+Time management strategies and current challenges
+What do you hope to gain from our mentorship relationship
 If you need to reschedule, please let me know at least 24 hours in advance.
 
 Looking forward to our conversation!
@@ -239,25 +262,23 @@ Looking forward to our conversation!
 Best regards,
 [Your Name]`,
 
-    "follow-up": `Subject: Great meeting you today - Action Items & Next Steps
-
-Hi [Student Name],
+    "follow-up": `Hi [Student Name],
 
 It was great meeting with you today! I enjoyed learning more about your goals and interests.
 
 Summary of what we discussed:
-• [Key Point 1]
-• [Key Point 2]
-• [Key Point 3]
 
+[Key Point 1]
+[Key Point 2]
+[Key Point 3]
 Your action items:
-• [Action Item 1] - Due: [Date]
-• [Action Item 2] - Due: [Date]
 
+[Action Item 1] - Due: [Date]
+[Action Item 2] - Due: [Date]
 Resources mentioned:
-• [Resource 1 with link]
-• [Resource 2 with link]
 
+[Resource 1 with link]
+[Resource 2 with link]
 Our next meeting is scheduled for [Next Meeting Date]. Please reach out if you have any questions before then!
 
 Keep up the great work!
@@ -265,24 +286,22 @@ Keep up the great work!
 Best regards,
 [Your Name]`,
 
-    "mid-semester-checkin": `Subject: Mid-Semester COMPASS Check-in - Let's Celebrate Your Progress!
-
-Hi [Student Name],
+    "mid-semester-checkin": `Hi [Student Name],
 
 Can you believe we're already halfway through the semester? Time for our comprehensive mid-semester check-in!
 
-I'd like to schedule a special 60-minute session using our Mid-Semester Check-in Blueprint to:
-• Celebrate your achievements so far
-• Assess progress on your goals
-• Address any challenges strategically
-• Plan for a strong finish to the semester
+I'd like to schedule a special 60-minute session to:
 
+Celebrate your achievements so far
+Assess progress on your goals
+Address any challenges strategically
+Plan for a strong finish to the semester
 Please come prepared to discuss:
-• Your academic performance and how you feel about it
-• Which goals you've made progress on
-• Any new challenges or opportunities
-• What support you need for the rest of the semester
 
+Your academic performance and how you feel about it
+Which goals you've made progress on
+Any new challenges or opportunities
+What support you need for the rest of the semester
 Are you available [Date Options] for this important check-in?
 
 Looking forward to celebrating your growth!
@@ -290,27 +309,23 @@ Looking forward to celebrating your growth!
 Best regards,
 [Your Name]`,
 
-    "final-transition": `Subject: Our Final COMPASS Session - Celebrating Your Journey!
-
-Hi [Student Name],
+    "final-transition": `Hi [Student Name],
 
 It's hard to believe, but it's time for our final COMPASS mentorship session. What an incredible journey it's been!
 
-For our final 60-minute meeting, we'll follow the Final Transition Blueprint and focus on:
-• Reflecting on how much you've grown
-• Celebrating all your achievements
-• Planning for your continued success
-• Connecting you with ongoing resources and networks
+For our final 60-minute meeting, we'll focus on:
 
+Reflecting on how much you've grown
+Celebrating all your achievements
+Planning for your continued success
+Connecting you with ongoing resources and networks
 Please come ready to share:
-• What you're most proud of accomplishing
-• How you've grown since our first meeting
-• Your goals for the next phase of your journey
-• Any questions about transitioning to independence
 
+What you're most proud of accomplishing
+How you've grown since our first meeting
+Your goals for the next phase of your journey
+Any questions about transitioning to independence
 Are you available [Date Options] for this celebration and transition session?
-
-I'm so proud of everything you've achieved, and I'm excited to send you off with confidence!
 
 Best regards,
 [Your Name]`,
